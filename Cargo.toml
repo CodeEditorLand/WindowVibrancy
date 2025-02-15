@@ -1,21 +1,3 @@
-[package]
-name = "window-vibrancy"
-description = "Make your windows vibrant."
-authors = ["Tauri Programme within The Commons Conservancy"]
-version = "0.5.2"
-edition = "2021"
-rust-version = "1.56"
-license-file = "LICENSE"
-readme = "README.md"
-repository = "https://github.com/tauri-apps/tauri-plugin-vibrancy"
-documentation = "https://docs.rs/tauri-plugin-vibrancy"
-keywords = ["vibrancy", "acrylic", "mica", "blur", "windowing"]
-categories = ["gui"]
-
-[package.metadata.docs.rs]
-default-target = "x86_64-pc-windows-msvc"
-targets = ["x86_64-apple-darwin", "x86_64-pc-windows-msvc"]
-
 [dependencies]
 raw-window-handle = "0.6"
 
@@ -23,19 +5,34 @@ raw-window-handle = "0.6"
 tao = { version = "0.30" }
 winit = { version = "0.29" }
 
-[target.'cfg(target_os = "windows")'.dependencies]
-windows-version = "0.1"
+[lib]
+path = "Source/lib.rs"
 
-[target.'cfg(target_os = "windows")'.dependencies.windows-sys]
-version = "0.59.0"
-features = [
-	"Win32_Foundation",
-	"Win32_System_LibraryLoader",
-	"Win32_System_SystemInformation",
-	"Win32_Graphics_Gdi",
-	"Win32_Graphics_Dwm",
-	"Win32_UI_WindowsAndMessaging",
-]
+[package]
+authors = ["Tauri Programme within The Commons Conservancy"]
+categories = ["gui"]
+description = "Make your windows vibrant."
+documentation = "https://docs.rs/tauri-plugin-vibrancy"
+edition = "2021"
+keywords = ["vibrancy", "acrylic", "mica", "blur", "windowing"]
+license-file = "LICENSE"
+name = "window-vibrancy"
+readme = "README.md"
+repository = "https://github.com/tauri-apps/tauri-plugin-vibrancy"
+rust-version = "1.56"
+version = "0.5.2"
+
+[package.metadata]
+
+[package.metadata.docs]
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = ["x86_64-apple-darwin", "x86_64-pc-windows-msvc"]
+
+[target]
+
+[target.'cfg(target_os = "macos")']
 
 [target.'cfg(target_os = "macos")'.dependencies]
 objc2 = "0.5.2"
@@ -52,3 +49,19 @@ objc2-foundation = { version = "0.2.2", default-features = false, features = [
   "NSThread",
   "NSGeometry",
 ] }
+
+[target.'cfg(target_os = "windows")']
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows-version = "0.1"
+
+[target.'cfg(target_os = "windows")'.dependencies.windows-sys]
+features = [
+	"Win32_Foundation",
+	"Win32_System_LibraryLoader",
+	"Win32_System_SystemInformation",
+	"Win32_Graphics_Gdi",
+	"Win32_Graphics_Dwm",
+	"Win32_UI_WindowsAndMessaging",
+]
+version = "0.59.0"
