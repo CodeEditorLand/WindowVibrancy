@@ -2,8 +2,8 @@
 raw-window-handle = "0.6"
 
 [dev-dependencies]
-tao = { version = "0.30" }
-winit = { version = "0.29" }
+tao = { version = "0.31" }
+winit = { version = "0.30" }
 
 [lib]
 path = "Source/lib.rs"
@@ -13,13 +13,13 @@ authors = ["Tauri Programme within The Commons Conservancy"]
 categories = ["gui"]
 description = "Make your windows vibrant."
 documentation = "https://docs.rs/tauri-plugin-vibrancy"
-edition = "2021"
+edition = "2024"
 keywords = ["vibrancy", "acrylic", "mica", "blur", "windowing"]
 license-file = "LICENSE"
 name = "window-vibrancy"
 readme = "README.md"
 repository = "https://github.com/tauri-apps/tauri-plugin-vibrancy"
-rust-version = "1.56"
+rust-version = "1.85.0"
 version = "0.5.2"
 
 [package.metadata]
@@ -35,8 +35,8 @@ targets = ["x86_64-apple-darwin", "x86_64-pc-windows-msvc"]
 [target.'cfg(target_os = "macos")']
 
 [target.'cfg(target_os = "macos")'.dependencies]
-objc2 = "0.5.2"
-objc2-app-kit = { version = "0.2.2", default-features = false, features = [
+objc2 = "0.6.0"
+objc2-app-kit = { version = "0.3.0", default-features = false, features = [
   "std",
   "NSApplication",
   "NSGraphics",
@@ -44,7 +44,7 @@ objc2-app-kit = { version = "0.2.2", default-features = false, features = [
   "NSView",
   "NSVisualEffectView",
 ] }
-objc2-foundation = { version = "0.2.2", default-features = false, features = [
+objc2-foundation = { version = "0.3.0", default-features = false, features = [
   "std",
   "NSThread",
   "NSGeometry",

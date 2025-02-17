@@ -1,16 +1,20 @@
 [build-dependencies]
-tauri-build = { version = "2.0.0-beta" }
+tauri-build = { version = "2.0.5" }
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-tauri = { version = "2.0.0-beta", features = ["macos-private-api"] }
+tauri = { version = "2.2.5", features = ["macos-private-api"] }
 window-vibrancy = { path = "../../../" }
 
 [package]
 authors = ["Tauri Programme within The Commons Conservancy"]
 description = "A Tauri App"
-edition = "2021"
+edition = "2024"
 license-file = "LICENSE"
-name = "app"
+name = "window-vibrancy-example-tauri"
 version = "0.0.0"
+
+[[bin]]
+name = "window-vibrancy-example-tauri"
+path = "Source/main.rs"
