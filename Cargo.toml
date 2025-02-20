@@ -10,13 +10,10 @@ path = "Source/lib.rs"
 
 [package]
 authors = ["Tauri Programme within The Commons Conservancy"]
-categories = ["gui"]
-description = "Make your windows vibrant."
-documentation = "https://docs.rs/tauri-plugin-vibrancy"
-edition = "2024"
-keywords = ["vibrancy", "acrylic", "mica", "blur", "windowing"]
-license-file = "LICENSE"
-name = "window-vibrancy"
+version = "0.5.3"
+edition = "2021"
+rust-version = "1.56"
+license = "Apache-2.0 OR MIT"
 readme = "README.md"
 repository = "https://github.com/tauri-apps/tauri-plugin-vibrancy"
 rust-version = "1.85.0"
