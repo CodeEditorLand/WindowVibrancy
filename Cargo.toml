@@ -10,9 +10,9 @@ path = "Source/lib.rs"
 
 [package]
 authors = ["Tauri Programme within The Commons Conservancy"]
-version = "0.5.3"
+version = "0.6.0"
 edition = "2021"
-rust-version = "1.56"
+rust-version = "1.71"
 license = "Apache-2.0 OR MIT"
 readme = "README.md"
 repository = "https://github.com/tauri-apps/tauri-plugin-vibrancy"
@@ -46,19 +46,6 @@ objc2-foundation = { version = "0.3.0", default-features = false, features = [
   "NSThread",
   "NSGeometry",
 ] }
-
-[target.'cfg(target_os = "windows")']
-
-[target.'cfg(target_os = "windows")'.dependencies]
-windows-version = "0.1"
-
-[target.'cfg(target_os = "windows")'.dependencies.windows-sys]
-features = [
-	"Win32_Foundation",
-	"Win32_System_LibraryLoader",
-	"Win32_System_SystemInformation",
-	"Win32_Graphics_Gdi",
-	"Win32_Graphics_Dwm",
-	"Win32_UI_WindowsAndMessaging",
-]
-version = "0.59.0"
+objc2-core-foundation = { version = "0.3.0", default-features = false, features = [
+  "std",
+] }
