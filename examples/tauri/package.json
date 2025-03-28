@@ -1,10 +1,10 @@
 {
-	"name": "app",
-	"description": "",
-	"main": "index.js",
-	"scripts": {},
 	"dependencies": {
 		"@codeeditorland/cli": "0.0.1"
 	},
-	"devDependencies": {}
+	"description": "",
+	"devDependencies": {},
+	"main": "index.js",
+	"name": "app",
+	"scripts": {}
 }
