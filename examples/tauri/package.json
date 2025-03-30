@@ -1,39 +1,39 @@
 {
-	"author": {
-		"email": "Source/Open@Editor.Land",
-		"name": "Source 🖋️ Open 👐🏻",
-		"url": "HTTPS://Editor.Land"
-	},
-	"bugs": {
-		"url": "HTTPS://GitHub.Com/CodeEditorLand/WindowVibrancy/issues"
-	},
-	"dependencies": {
-		"@codeeditorland/cli": "0.0.1"
-	},
+	"name": "app",
+	"version": "0.0.1",
+	"private": false,
 	"description": "",
-	"devDependencies": {
-		"@playform/build": "0.2.1"
-	},
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/WindowVibrancy#readme",
 	"keywords": [
 		"codeeditorland",
 		"land",
 		"playform"
 	],
-	"license": "SEE LICENSE IN LICENSE",
-	"main": "index.js",
-	"name": "app",
-	"private": false,
-	"publishConfig": {
-		"access": "public"
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/WindowVibrancy#readme",
+	"bugs": {
+		"url": "HTTPS://GitHub.Com/CodeEditorLand/WindowVibrancy/issues"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+HTTPS://github.com/CodeEditorLand/WindowVibrancy.git"
 	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Source 🖋️ Open 👐🏻",
+		"email": "Source/Open@Editor.Land",
+		"url": "HTTPS://Editor.Land"
+	},
+	"type": "module",
+	"main": "index.js",
 	"scripts": {
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
-	"type": "module",
-	"version": "0.0.1"
+	"dependencies": {
+		"@codeeditorland/cli": "0.0.1"
+	},
+	"devDependencies": {
+		"@playform/build": "0.2.1"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }
