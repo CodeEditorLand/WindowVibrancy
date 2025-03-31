@@ -25,8 +25,7 @@ fn main() {
 	let window = builder.build(&event_loop).unwrap();
 
 	#[cfg(target_os = "windows")]
-	apply_acrylic(&window, None)
-		.expect("Unsupported platform! 'apply_blur' is only supported on Windows");
+	apply_acrylic(&window, None).expect("Unsupported platform! 'apply_blur' is only supported on Windows");
 
 	#[cfg(target_os = "macos")]
 	apply_vibrancy(&window, NSVisualEffectMaterial::HudWindow, None, None)
@@ -41,16 +40,9 @@ fn main() {
 		*control_flow = ControlFlow::Wait;
 
 		match event {
-			Event::WindowEvent { event: WindowEvent::CloseRequested, .. } => {
-				*control_flow = ControlFlow::Exit
-			},
+			Event::WindowEvent { event: WindowEvent::CloseRequested, .. } => *control_flow = ControlFlow::Exit,
 			Event::WindowEvent {
-				event:
-					WindowEvent::MouseInput {
-						state: ElementState::Pressed,
-						button: MouseButton::Left,
-						..
-					},
+				event: WindowEvent::MouseInput { state: ElementState::Pressed, button: MouseButton::Left, .. },
 				..
 			} => {
 				window.drag_window().unwrap();
