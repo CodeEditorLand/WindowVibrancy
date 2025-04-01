@@ -2,22 +2,25 @@
 raw-window-handle = "0.6"
 
 [dev-dependencies]
-tao = { version = "0.31" }
-winit = { version = "0.30" }
+tao = "0.30"
+winit = "0.29"
 
 [lib]
 path = "Source/lib.rs"
 
 [package]
 authors = ["Tauri Programme within The Commons Conservancy"]
-version = "0.6.0"
+categories = ["gui"]
+description = "Make your windows vibrant."
+documentation = "https://docs.rs/tauri-plugin-vibrancy"
 edition = "2021"
-rust-version = "1.71"
+keywords = ["vibrancy", "acrylic", "mica", "blur", "windowing"]
 license = "Apache-2.0 OR MIT"
+name = "window-vibrancy"
 readme = "README.md"
 repository = "https://github.com/tauri-apps/tauri-plugin-vibrancy"
-rust-version = "1.85.0"
-version = "0.5.2"
+rust-version = "1.71"
+version = "0.6.0"
 
 [package.metadata]
 
@@ -41,11 +44,27 @@ objc2-app-kit = { version = "0.3.0", default-features = false, features = [
   "NSView",
   "NSVisualEffectView",
 ] }
+objc2-core-foundation = { version = "0.3.0", default-features = false, features = [
+  "std",
+] }
 objc2-foundation = { version = "0.3.0", default-features = false, features = [
   "std",
   "NSThread",
   "NSGeometry",
 ] }
-objc2-core-foundation = { version = "0.3.0", default-features = false, features = [
-  "std",
-] }
+
+[target.'cfg(target_os = "windows")']
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows-version = "0.1"
+
+[target.'cfg(target_os = "windows")'.dependencies.windows-sys]
+features = [
+  "Win32_Foundation",
+  "Win32_System_LibraryLoader",
+  "Win32_System_SystemInformation",
+  "Win32_Graphics_Gdi",
+  "Win32_Graphics_Dwm",
+  "Win32_UI_WindowsAndMessaging",
+]
+version = "0.59.0"
