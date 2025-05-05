@@ -1,20 +1,16 @@
-[[bin]]
-name = "window-vibrancy-example-tauri"
-path = "Source/main.rs"
+[package]
+name = "app"
+version = "0.0.0"
+description = "A Tauri App"
+authors = ["Tauri Programme within The Commons Conservancy"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
 
 [build-dependencies]
-tauri-build = { version = "2.0.5" }
+tauri-build = { version = "2.0.0-beta" }
 
 [dependencies]
-serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-tauri = { version = "2.2.5", features = ["macos-private-api"] }
+serde = { version = "1", features = ["derive"] }
+tauri = { version = "2.0.0-beta", features = ["macos-private-api"] }
 window-vibrancy = { path = "../../../" }
-
-[package]
-authors = ["Tauri Programme within The Commons Conservancy"]
-description = "A Tauri App"
-edition = "2024"
-license-file = "LICENSE"
-name = "window-vibrancy-example-tauri"
-version = "0.0.0"
