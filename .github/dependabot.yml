@@ -1,0 +1,32 @@
+version: 2
+enable-beta-ecosystems: true
+
+updates:
+    - package-ecosystem: "github-actions"
+      directory: "/"
+      schedule:
+          interval: "daily"
+
+    - package-ecosystem: "cargo"
+      directory: "/"
+      schedule:
+          interval: "daily"
+      versioning-strategy: lockfile-only
+      
+
+    - package-ecosystem: "npm"
+      directory: "/examples/tauri"
+      schedule:
+          interval: "daily"
+      versioning-strategy: increase
+      ignore:
+          - dependency-name: "tailwindcss"
+            versions:
+                - "^4.0.0"
+
+    - package-ecosystem: "cargo"
+      directory: "/examples/tauri/src-tauri"
+      schedule:
+          interval: "daily"
+      versioning-strategy: lockfile-only
+      
